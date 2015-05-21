@@ -1,0 +1,38 @@
+﻿<Window x:Class="IndicateursAA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="505.2" Width="825.8">
+    <Grid Background="#FF94B4D6">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="456" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="184"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="199,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="250"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="608,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+        <TextBlock HorizontalAlignment="Left" Margin="216,26,0,0" TextWrapping="Wrap" Text="Ville de Départ : " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="216,54,0,0" TextWrapping="Wrap" Text="Ville d'Arrivée : " VerticalAlignment="Top"/>
+        <Button x:Name="Rechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="354,75,0,0" VerticalAlignment="Top" Width="75" Click="Rechercher_Click"/>
+        <TextBlock x:Name="TextBlock_BilletVendu" HorizontalAlignment="Left" Margin="621,19,0,0" TextWrapping="Wrap" Text="Nombre de billet vendus : ???" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlock_ChiffreAffaire" HorizontalAlignment="Left" Margin="621,47,0,0" TextWrapping="Wrap" Text="Chiffre d'Affaire généré : ???€" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlock_BeneficesApprox" HorizontalAlignment="Left" Margin="621,75,0,0" TextWrapping="Wrap" Text="Bénéfices Approximatifs : ???€" VerticalAlignment="Top"/>
+        <TabControl HorizontalAlignment="Left" Height="351" Margin="199,115,0,0" VerticalAlignment="Top" Width="610">
+            <TabItem Header="Fréquentation">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="323" Width="604" IsReadOnly="True" SelectionChanged="DataGrid_SelectionChanged_1" Margin="0,0,0,-0.6">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Ligne}" Header="Ligne"/>
+                            <DataGridTextColumn Binding="{Binding Min_Places_Vendues}" Header="Min Places Vendues"/>
+                            <DataGridTextColumn Binding="{Binding Max_Places_Vendues}" Header="Max_Places_Vendues"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Recherche">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Sélection">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="309,19,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="309,48,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
